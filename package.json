@@ -1,0 +1,21 @@
+{
+  "name": "@noisedeck/tangerine-handfish",
+  "version": "0.1.0",
+  "description": "TangerineUI for Mastodon, ported to the Handfish design system",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:standalone": "node scripts/build.js --standalone"
+  },
+  "tangerineUI": {
+    "upstream": "https://github.com/nileane/TangerineUI-for-Mastodon",
+    "upstreamVersion": "v2.5.3",
+    "upstreamCommit": "TO_BE_FILLED_AT_FORK_TIME"
+  },
+  "keywords": ["mastodon", "theme", "handfish", "tangerineui"],
+  "author": "Noise Factor LLC",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.27.3"
+  }
+}

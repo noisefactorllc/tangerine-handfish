@@ -1,0 +1,3 @@
+/* Handfish → TangerineUI Variable Mapping Layer
+ * Bridges --hf-* design tokens to TangerineUI's --color-* namespace.
+ * No Mastodon DOM selectors — pure :root declarations. */

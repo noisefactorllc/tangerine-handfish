@@ -1,0 +1,4 @@
+/* TangerineUI Base (forked from v2.5.3)
+ * Upstream: https://github.com/nileane/TangerineUI-for-Mastodon
+ * Modifications: :root declarations removed, prefers-color-scheme
+ * queries removed, hardcoded colors replaced with var() refs. */
