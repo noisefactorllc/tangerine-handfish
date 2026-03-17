@@ -1,3 +1,58 @@
 /* Handfish → TangerineUI Variable Mapping Layer
  * Bridges --hf-* design tokens to TangerineUI's --color-* namespace.
- * No Mastodon DOM selectors — pure :root declarations. */
+ * No Mastodon DOM selectors — pure :root declarations.
+ *
+ * Requires: Handfish tokens.css loaded before this file.
+ */
+
+:root {
+    /* === Colors === */
+
+    /* Backgrounds */
+    --color-bg: var(--hf-bg-base);
+    --gradient-bg: linear-gradient(90deg, var(--color-bg), var(--color-bg));
+    --color-content-bg: var(--hf-bg-surface);
+    --color-secondary-bg: var(--hf-bg-elevated);
+    --color-content-secondary-bg: var(--hf-bg-elevated);
+    --color-bg-muted: var(--hf-bg-muted);
+
+    /* Text */
+    --color-fg: var(--hf-text-bright);
+    --color-fg-muted: var(--hf-text-muted);
+    --color-content-fg: var(--hf-text-normal);
+    --color-content-fg-bold: var(--hf-text-bright);
+    --color-content-fg-muted: var(--hf-text-dim);
+    --color-text-dim: var(--hf-text-dim);
+
+    /* Accent */
+    --color-accent: var(--hf-accent);
+    --color-accent-focus: var(--hf-accent-hover);
+    --color-accent-bg: var(--hf-accent-bg);
+    --color-accent-fg: var(--hf-text-bright);
+    --color-accent-lines: color-mix(in srgb, var(--hf-accent) 15%, transparent 85%);
+    --color-content-bg-focus: color-mix(in srgb, var(--hf-accent) 6%, var(--color-content-bg) 94%);
+
+    /* Lines & Borders */
+    --color-lines: var(--hf-border);
+    --color-lines-translucent: var(--hf-border);
+    --color-secondary-separator: var(--hf-border-subtle);
+    --color-content-secondary-separator: color-mix(in srgb, var(--hf-border) 40%, transparent 60%);
+
+    /* Semantic / Status */
+    --color-confirm: var(--hf-green);
+    --color-confirm-bg: color-mix(in srgb, var(--hf-green) 30%, transparent 70%);
+    --color-confirm-fg: var(--hf-green);
+    --color-reject: var(--hf-red);
+    --color-reject-bg: color-mix(in srgb, var(--hf-red) 30%, transparent 70%);
+    --color-warning: var(--hf-yellow);
+    --color-info: var(--hf-blue);
+
+    /* === Typography === */
+    --font-family: var(--hf-font-family);
+    --font-family-mono: var(--hf-font-family-mono);
+
+    /* === Mastodon expected variables === */
+    --background-color: var(--color-bg);
+    --background-border-color: var(--color-lines);
+    --modal-background-color: var(--color-content-bg);
+}

@@ -1,3 +1,252 @@
 /* Handfish Design System Overrides for Mastodon
  * Applies glassmorphism, shadows, radii, spacing, z-index,
- * focus rings, transitions, and scrollbar styling to Mastodon's DOM. */
+ * focus rings, transitions, and scrollbar styling to Mastodon's DOM.
+ *
+ * Organized by Mastodon component area.
+ * This file is the most Mastodon-version-sensitive component.
+ */
+
+/* ============================================================
+ * Typography
+ * ============================================================ */
+
+body,
+.compose-form,
+.reply-indicator,
+.status,
+.detailed-status,
+.account,
+.notification,
+.column-header,
+.drawer__header,
+.search__input,
+.setting-text {
+    font-family: var(--hf-font-family);
+    line-height: var(--hf-leading-normal);
+}
+
+pre, code, .status__content pre, .reply-indicator__content pre {
+    font-family: var(--hf-font-family-mono);
+}
+
+/* ============================================================
+ * Glassmorphism
+ * ============================================================ */
+
+/* Column panels */
+.column > .scrollable,
+.columns-area__panels__main,
+.explore__search-header {
+    background: color-mix(in srgb, var(--color-content-bg) var(--hf-surface-opacity), transparent var(--hf-surface-transparency));
+    backdrop-filter: var(--hf-glass-blur);
+    -webkit-backdrop-filter: var(--hf-glass-blur);
+}
+
+/* Navigation / drawer header */
+.drawer__header,
+.column-header,
+.column-header__back-button,
+.column-header__buttons,
+.tabs-bar__wrapper {
+    background: color-mix(in srgb, var(--color-bg) var(--hf-header-opacity), transparent var(--hf-header-transparency));
+    backdrop-filter: var(--hf-glass-blur);
+    -webkit-backdrop-filter: var(--hf-glass-blur);
+}
+
+/* Modal overlays */
+.modal-root__overlay {
+    background: var(--hf-backdrop);
+}
+
+.modal-root__container .modal-root__modal,
+.modal-root .compose-modal,
+.modal-root .report-modal,
+.modal-root .embed-modal,
+.modal-root .list-editor {
+    background: color-mix(in srgb, var(--color-content-bg) var(--hf-panel-opacity), transparent var(--hf-panel-transparency));
+    backdrop-filter: var(--hf-glass-blur);
+    -webkit-backdrop-filter: var(--hf-glass-blur);
+}
+
+/* ============================================================
+ * Shadows
+ * ============================================================ */
+
+.status,
+.detailed-status,
+.notification,
+.account-card {
+    box-shadow: var(--hf-shadow);
+}
+
+.modal-root__container .modal-root__modal,
+.modal-root .compose-modal,
+.modal-root .report-modal,
+.modal-root .confirmation-modal,
+.actions-modal,
+.boost-modal {
+    box-shadow: var(--hf-shadow-lg);
+}
+
+.dropdown-menu,
+.privacy-dropdown__dropdown {
+    box-shadow: var(--hf-shadow-md);
+}
+
+.tooltip {
+    box-shadow: var(--hf-shadow-md);
+}
+
+/* ============================================================
+ * Border Radii
+ * ============================================================ */
+
+.status,
+.detailed-status,
+.notification,
+.account-card,
+.compose-form,
+.reply-indicator {
+    border-radius: var(--hf-radius);
+}
+
+button,
+.button,
+.icon-button,
+.text-btn,
+.column-header__button,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="search"],
+textarea,
+.search__input,
+.setting-text {
+    border-radius: var(--hf-radius-sm);
+}
+
+.modal-root__container .modal-root__modal,
+.modal-root .compose-modal,
+.modal-root .report-modal,
+.confirmation-modal,
+.actions-modal,
+.boost-modal {
+    border-radius: var(--hf-radius-lg);
+}
+
+.account__avatar,
+.account__avatar-overlay-base,
+.account__avatar-overlay-overlay {
+    border-radius: var(--hf-radius-pill);
+}
+
+.dropdown-menu,
+.privacy-dropdown__dropdown {
+    border-radius: var(--hf-radius);
+}
+
+/* ============================================================
+ * Spacing
+ * ============================================================ */
+
+.status,
+.detailed-status,
+.notification {
+    padding: var(--hf-space-4);
+}
+
+.status__action-bar,
+.detailed-status__action-bar {
+    gap: var(--hf-space-2);
+}
+
+.compose-form {
+    padding: var(--hf-space-4);
+}
+
+.column-header {
+    padding: var(--hf-space-3) var(--hf-space-4);
+}
+
+.modal-root__container .modal-root__modal {
+    padding: var(--hf-space-6);
+}
+
+/* ============================================================
+ * Focus States
+ * ============================================================ */
+
+:focus-visible {
+    outline: var(--hf-focus-ring-width) solid var(--hf-focus-ring-color);
+    outline-offset: var(--hf-focus-ring-offset);
+}
+
+/* ============================================================
+ * Transitions
+ * ============================================================ */
+
+button,
+.button,
+.icon-button,
+.status,
+.account,
+a {
+    transition:
+        var(--hf-transition-bg),
+        var(--hf-transition-color),
+        var(--hf-transition-border),
+        var(--hf-transition-opacity);
+}
+
+/* ============================================================
+ * Z-Index
+ * ============================================================ */
+
+.modal-root__overlay {
+    z-index: var(--hf-z-modal-backdrop);
+}
+
+.modal-root__container {
+    z-index: var(--hf-z-modal);
+}
+
+.dropdown-menu,
+.privacy-dropdown__dropdown {
+    z-index: var(--hf-z-dropdown);
+}
+
+.column-header,
+.tabs-bar__wrapper {
+    z-index: var(--hf-z-sticky);
+}
+
+.tooltip {
+    z-index: var(--hf-z-tooltip);
+}
+
+/* ============================================================
+ * Scrollbars
+ * ============================================================ */
+
+.scrollable::-webkit-scrollbar,
+.column::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.scrollable::-webkit-scrollbar-track,
+.column::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb,
+.column::-webkit-scrollbar-thumb {
+    background: var(--hf-border);
+    border-radius: var(--hf-radius-pill);
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover,
+.column::-webkit-scrollbar-thumb:hover {
+    background: var(--hf-border-hover);
+}
