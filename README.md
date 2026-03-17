@@ -8,11 +8,11 @@ Based on [TangerineUI-for-Mastodon](https://github.com/nileane/TangerineUI-for-M
 
 A Mastodon CSS theme that combines TangerineUI's UX improvements (compact timeline, interaction animations, icon system, DM styling) with Handfish's design language (OKLCH colors, glassmorphism, themed typography, consistent spacing).
 
-Supports all Handfish themes — switch themes by setting `data-theme` on `<html>`.
+Supports all Handfish themes.
 
 ## Usage
 
-### Option A: Separate Stylesheets (Recommended)
+### Option A: Separate Stylesheets (Untested)
 
 Load Handfish tokens, an optional theme, then tangerine-handfish:
 
@@ -52,9 +52,11 @@ node scripts/build.js --standalone --theme cyberpunk  # standalone with specific
 
 ## Available Themes
 
-Set `data-theme` on `<html>`: `dark`, `light`, `cyberpunk`, `terminal`, `organic`, `earthy`, `corporate`, `neutral-dark`, `neutral-light`, `gray-dark`, `gray-light`.
+Each standalone build bakes in a specific theme. Pick the CSS file that matches the look you want:
 
-Without `data-theme`, automatically follows system light/dark preference.
+`dark` (default), `light`, `cyberpunk`, `terminal`, `organic`, `earthy`, `corporate`, `neutral-dark`, `neutral-light`, `gray-dark`, `gray-light`
+
+For the modular build (Option A), load the matching Handfish theme stylesheet before tangerine-handfish.
 
 ## Contributing
 
