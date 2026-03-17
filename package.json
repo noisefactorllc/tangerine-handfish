@@ -16,6 +16,14 @@
   "keywords": ["mastodon", "theme", "handfish", "tangerineui"],
   "author": "Noise Factor LLC",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noisedeck/tangerine-handfish.git"
+  },
+  "homepage": "https://github.com/noisedeck/tangerine-handfish",
+  "bugs": {
+    "url": "https://github.com/noisedeck/tangerine-handfish/issues"
+  },
   "devDependencies": {
     "esbuild": "^0.27.3"
   }

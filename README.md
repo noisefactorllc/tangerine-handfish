@@ -45,6 +45,12 @@ Set `data-theme` on `<html>`: `dark`, `light`, `cyberpunk`, `terminal`, `organic
 
 Without `data-theme`, automatically follows system light/dark preference.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for build prerequisites and guidelines.
+
+**Note:** The standalone build requires the [Handfish](https://github.com/noisedeck/handfish) repo cloned as a sibling directory (`../handfish/`). The modular build (`npm run build`) works without it.
+
 ## License
 
 MIT. See LICENSE.
