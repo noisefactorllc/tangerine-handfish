@@ -30,6 +30,17 @@ Paste the contents of `dist/tangerine-handfish-standalone.css` into your instanc
 
 Use [Stylus](https://add0n.com/stylus.html) or similar to inject the standalone CSS.
 
+## Content Security Policy
+
+Tangerine-Handfish loads fonts and (optionally) stylesheets from a privacy-respecting CDN with no tracking, cookies, or analytics. If your Mastodon instance uses a Content Security Policy, add these origins:
+
+```
+font-src https://fonts.noisefactor.io;
+style-src https://handfish.noisefactor.io;
+```
+
+The standalone build (Option B) only requires `font-src`. Direct linking (Option A) requires both.
+
 ## Building
 
 ```bash
