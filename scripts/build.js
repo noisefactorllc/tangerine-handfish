@@ -19,9 +19,9 @@ const repoRoot = path.resolve(__dirname, '..')
 const distDir = path.join(repoRoot, 'dist')
 const srcDir = path.join(repoRoot, 'src')
 
-// Handfish paths (sibling repo in platform directory)
-const platformDir = path.resolve(repoRoot, '..')
-const handfishStylesDir = path.join(platformDir, 'handfish', 'src', 'styles')
+// Handfish paths — sibling repo in platform directory, or HANDFISH_DIR env override
+const handfishRoot = process.env.HANDFISH_DIR || path.join(repoRoot, '..', 'handfish')
+const handfishStylesDir = path.join(handfishRoot, 'src', 'styles')
 
 const args = process.argv.slice(2)
 const isStandalone = args.includes('--standalone')
