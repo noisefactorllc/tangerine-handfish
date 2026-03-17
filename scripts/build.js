@@ -160,18 +160,32 @@ async function buildStandalone(theme = null) {
     // Inline theme if specified — unwrap the requested [data-theme="..."] selector
     // to :root so it applies unconditionally, and strip other variants from the file
     if (theme) {
-        // Theme name may be a sub-variant (e.g. "gray-dark") inside a file (e.g. "gray.css")
-        // Try exact file first, then try base name
+        let themeCSS = null
+
+        // Check themes directory first (exact file, then base name for sub-variants)
         let themePath = path.join(handfishStylesDir, 'themes', `${theme}.css`)
         if (!fs.existsSync(themePath)) {
             const baseName = theme.replace(/-(?:dark|light)$/, '')
             themePath = path.join(handfishStylesDir, 'themes', `${baseName}.css`)
         }
-        if (!fs.existsSync(themePath)) {
+        if (fs.existsSync(themePath)) {
+            themeCSS = fs.readFileSync(themePath, 'utf8')
+        }
+
+        // Fall back to tokens.css for base dark/light variants
+        if (!themeCSS) {
+            const tokensCSS = fs.readFileSync(path.join(handfishStylesDir, 'tokens.css'), 'utf8')
+            const match = tokensCSS.match(new RegExp(`\\[data-theme="${theme}"\\]\\s*\\{[^}]*\\}`, 's'))
+            if (match) {
+                themeCSS = match[0]
+            }
+        }
+
+        if (!themeCSS) {
             console.error(`Handfish theme not found for: ${theme}`)
             process.exit(1)
         }
-        let themeCSS = fs.readFileSync(themePath, 'utf8')
+
         // Unwrap the requested variant to :root
         themeCSS = themeCSS.replace(`[data-theme="${theme}"]`, ':root')
         // Remove any other [data-theme="..."] blocks entirely (other variants in same file)
@@ -209,8 +223,16 @@ async function buildStandalone(theme = null) {
 
 // Discover all available themes from handfish (including sub-variants like gray-dark/gray-light)
 function getAvailableThemes() {
-    const themesDir = path.join(handfishStylesDir, 'themes')
     const themes = []
+
+    // Base dark/light variants from tokens.css
+    const tokensCSS = fs.readFileSync(path.join(handfishStylesDir, 'tokens.css'), 'utf8')
+    for (const m of tokensCSS.matchAll(/\[data-theme="([^"]+)"\]/g)) {
+        themes.push(m[1])
+    }
+
+    // Named themes from themes directory
+    const themesDir = path.join(handfishStylesDir, 'themes')
     for (const file of fs.readdirSync(themesDir).filter(f => f.endsWith('.css'))) {
         const css = fs.readFileSync(path.join(themesDir, file), 'utf8')
         const variants = [...css.matchAll(/\[data-theme="([^"]+)"\]/g)].map(m => m[1])
