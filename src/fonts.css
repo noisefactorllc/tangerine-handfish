@@ -1,0 +1,48 @@
+/* Handfish Font Faces
+ * Extracted from handfish/src/styles/index.css
+ * Loaded from fonts.noisefactor.io CDN.
+ */
+
+/* Nunito Blank - Invisible metric placeholder (tiny, loads instantly) */
+@font-face {
+    font-family: 'Nunito Blank';
+    src: url('https://fonts.noisefactor.io/fonts/nunito/Nunito-Blank.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+}
+
+/* Nunito - Primary UI font */
+@font-face {
+    font-family: Nunito;
+    src: url('https://fonts.noisefactor.io/fonts/nunito/Nunito[wght].woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url('https://fonts.noisefactor.io/fonts/nunito/Nunito-Italic[wght].woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Noto Sans Mono Blank - Invisible metric placeholder */
+@font-face {
+    font-family: 'Noto Sans Mono Blank';
+    src: url('https://fonts.noisefactor.io/fonts/noto-sans-mono/NotoSansMono-Blank.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+}
+
+/* Noto Sans Mono - Monospace font */
+@font-face {
+    font-family: 'Noto Sans Mono';
+    src: url('https://fonts.noisefactor.io/fonts/noto-sans-mono/NotoSansMono[wdth,wght].woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}

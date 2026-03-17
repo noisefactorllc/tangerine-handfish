@@ -18,7 +18,7 @@
 
     /* Text */
     --color-fg: var(--hf-text-bright);
-    --color-fg-muted: var(--hf-text-muted);
+    --color-fg-muted: var(--hf-text-dim);
     --color-content-fg: var(--hf-text-normal);
     --color-content-fg-bold: var(--hf-text-bright);
     --color-content-fg-muted: var(--hf-text-dim);
