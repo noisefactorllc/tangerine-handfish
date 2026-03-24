@@ -1,6 +1,6 @@
 {
   "name": "@noisedeck/tangerine-handfish",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TangerineUI for Mastodon, ported to the Handfish design system",
   "type": "module",
   "scripts": {
