@@ -226,6 +226,62 @@ a {
 }
 
 /* ============================================================
+ * Forms
+ * ============================================================ */
+
+/* Mastodon compiles $primary-text-color (white) and $ui-base-color (dark)
+ * into form elements at build time. Override with Handfish CSS variables
+ * so light themes get proper contrast. */
+
+.simple_form select {
+    color: var(--color-content-fg);
+    background-color: var(--color-content-bg);
+    border-color: var(--hf-border);
+    border-radius: var(--hf-radius-sm);
+}
+
+.simple_form label,
+.simple_form .label_input > label,
+.simple_form .input.with_label .label_input > label,
+.simple_form .input.with_block_label > label {
+    color: var(--color-content-fg);
+}
+
+.simple_form .hint,
+.simple_form p.hint {
+    color: var(--color-fg-muted);
+}
+
+.simple_form input[type="text"],
+.simple_form input[type="email"],
+.simple_form input[type="password"],
+.simple_form input[type="url"],
+.simple_form input[type="number"],
+.simple_form textarea {
+    color: var(--color-content-fg);
+    background-color: var(--color-content-bg);
+    border-color: var(--hf-border);
+}
+
+/* Mastodon compiles lighten($ui-base-color, 4%) for hover backgrounds.
+ * Override so light themes get a proper subtle hover instead of dark blue. */
+.simple_form .block-button:hover,
+.simple_form .button:hover,
+.simple_form button:hover,
+.admin-wrapper .sidebar ul ul a:hover,
+.admin-wrapper .sidebar ul ul a:focus,
+.admin-wrapper .sidebar ul ul a:active,
+.flash-message,
+.simple_form .row:hover {
+    background: var(--color-bg-muted);
+}
+
+.admin-wrapper .sidebar ul a:hover,
+.admin-wrapper .sidebar ul a.selected {
+    color: var(--color-content-fg-bold);
+}
+
+/* ============================================================
  * Scrollbars
  * ============================================================ */
 
