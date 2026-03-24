@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build:standalone": "node scripts/build.js --standalone",
-    "build:all": "node scripts/build.js --standalone --all"
+    "build:all": "node scripts/build.js --standalone --all",
+    "build:mastodon": "node scripts/build.js --mastodon"
   },
   "tangerineUI": {
     "upstream": "https://github.com/nileane/TangerineUI-for-Mastodon",
