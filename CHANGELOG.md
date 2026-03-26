@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 — 2026-03-26
+
+- Add 11 new Handfish themes: brutalist, dusk, gothic, high-contrast-dark, high-contrast-light, kawaii, newspaper, ocean, rave, sunset, synthwave
+
 ## 0.1.0 — 2026-03-17
 
 Initial release.
