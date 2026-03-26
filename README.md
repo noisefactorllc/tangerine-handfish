@@ -54,7 +54,7 @@ node scripts/build.js --standalone --theme cyberpunk  # standalone with specific
 
 Each standalone build bakes in a specific theme. Pick the CSS file that matches the look you want:
 
-`dark` (default), `light`, `cyberpunk`, `terminal`, `organic`, `earthy`, `corporate`, `neutral-dark`, `neutral-light`, `gray-dark`, `gray-light`
+`dark` (default), `light`, `brutalist`, `corporate`, `cyberpunk`, `dusk`, `earthy`, `gothic`, `gray-dark`, `gray-light`, `high-contrast-dark`, `high-contrast-light`, `kawaii`, `neutral-dark`, `neutral-light`, `newspaper`, `ocean`, `organic`, `rave`, `sunset`, `synthwave`, `terminal`
 
 For the modular build (Option A), load the matching Handfish theme stylesheet before tangerine-handfish.
 
